@@ -75,7 +75,7 @@
           <canvas id="qr-canvas" style="width: 200px; height: 200px;"></canvas>
         </div>
         <div class="qr-url">exp://u.expo.dev/your-project-id-here</div>
-        <button class="qr-copy" onclick="copyQR()">링크 복사</button>
+        <button id="qr-copy-btn" class="qr-copy" onclick="copyQR(event)">링크 복사</button>
       </div>
     </div>
   </div>
@@ -84,19 +84,50 @@
 <script>
   function generateQR(url) {
     const canvas = document.getElementById('qr-canvas');
-    if (!canvas) return;
+    if (!canvas || !window.qrcode) return;
 
-    // Simple QR placeholder (actual QR generation would need qrcode.min.js)
-    canvas.style.backgroundColor = '#fff';
+    try {
+      const qr = window.qrcode(0, 'M');
+      qr.addData(url || ' ');
+      qr.make();
+
+      const moduleCount = qr.getModuleCount();
+      const cellSize = 8;
+      const margin = 4;
+      const dim = (moduleCount + margin * 2) * cellSize;
+
+      canvas.width = dim;
+      canvas.height = dim;
+
+      const ctx = canvas.getContext('2d');
+      if (!ctx) return;
+
+      ctx.fillStyle = '#fff';
+      ctx.fillRect(0, 0, dim, dim);
+      ctx.fillStyle = '#0B0F1A';
+
+      for (let r = 0; r < moduleCount; r++) {
+        for (let c = 0; c < moduleCount; c++) {
+          if (qr.isDark(r, c)) {
+            ctx.fillRect((c + margin) * cellSize, (r + margin) * cellSize, cellSize, cellSize);
+          }
+        }
+      }
+    } catch (e) {
+      console.warn('QR error', e);
+    }
   }
 
-  function copyQR() {
+  function copyQR(event) {
     const url = 'exp://u.expo.dev/your-project-id-here';
+    const btn = event?.currentTarget || document.getElementById('qr-copy-btn');
+
     navigator.clipboard?.writeText(url).then(() => {
-      const btn = event.target;
+      if (!btn) return;
+      const originalText = btn.textContent;
       btn.textContent = '✓ 복사됨';
       setTimeout(() => {
-        btn.textContent = '링크 복사';
+        btn.textContent = originalText || '링크 복사';
       }, 1800);
     });
   }

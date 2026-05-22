@@ -46,8 +46,32 @@ const appNameKr = '오토스톡';
       </div>
     </div>
     <div class="hero-visual" style="display: flex; align-items: center; justify-content: center;">
-      <div style="position: relative; width: 100%; max-width: 350px;">
-        <img src="/assets/screen-realtime.png" alt="실시간 매매" style="width: 100%; border-radius: 48px; box-shadow: 0 30px 60px rgba(11,15,26,0.18), 0 0 0 1px rgba(11,15,26,0.10), inset 0 0 0 1px rgba(255,255,255,0.04);" />
+      <div class="phone-stage" style="position: relative; width: 360px; height: 580px;">
+        <div class="float" style="position: absolute; top: 0; left: 30px;">
+          <div style="width: 315px; height: 681px; border-radius: 48px; background: #0b0f1a; padding: 8px; box-shadow: 0 30px 60px rgba(11,15,26,0.18), 0 0 0 1px rgba(11,15,26,0.10), inset 0 0 0 1px rgba(255,255,255,0.04); position: relative;">
+            <div style="width: 100%; height: 100%; border-radius: 42px; overflow: hidden; background: #f2f2f7; position: relative;">
+              <img src="/assets/screen-realtime.png" alt="실시간 매매" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
+              <div style="position: absolute; top: 11px; left: 50%; transform: translateX(-50%); width: 110px; height: 32px; border-radius: 20px; background: #000;"></div>
+              <div style="position: absolute; bottom: 8px; left: 50%; transform: translateX(-50%); width: 120px; height: 4px; border-radius: 100px; background: rgba(0,0,0,0.25);"></div>
+            </div>
+          </div>
+        </div>
+        <div class="ticker-card" style="top: 60px; left: -40px; animation: float 7s ease-in-out infinite;">
+          <div class="ticker-sym" style="background: #2563eb;">NV</div>
+          <div class="ticker-meta">
+            <span class="ticker-name">NVDA · 매수 체결</span>
+            <span class="ticker-sub">1주 @ $225.99</span>
+          </div>
+          <span class="ticker-pct up">-2.0%</span>
+        </div>
+        <div class="ticker-card" style="bottom: 80px; right: -50px; animation: float 9s ease-in-out infinite reverse;">
+          <div class="ticker-sym" style="background: #0b0f1a;">TS</div>
+          <div class="ticker-meta">
+            <span class="ticker-name">TSM · 매도 성공</span>
+            <span class="ticker-sub">+2.01% 수익</span>
+          </div>
+          <span class="ticker-pct up">↑</span>
+        </div>
       </div>
     </div>
   </div>
