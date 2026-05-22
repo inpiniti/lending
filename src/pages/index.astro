@@ -1,17 +1,30 @@
 ---
-
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Hero from '../components/Hero.astro';
+import Features from '../components/Features.astro';
+import Screens from '../components/Screens.astro';
+import Security from '../components/Security.astro';
+import Portfolio from '../components/Portfolio.astro';
+import SimVsReal from '../components/SimVsReal.astro';
+import HowItWorks from '../components/HowItWorks.astro';
+import Install from '../components/Install.astro';
+import KISSetup from '../components/KISSetup.astro';
+import FAQ from '../components/FAQ.astro';
+import Footer from '../components/Footer.astro';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout title="AutoStock — 잠든 사이에도, 내 전략대로 매매">
+  <Nav appName="AutoStock" appNameKr="오토스톡" />
+  <Hero />
+  <Features />
+  <Screens />
+  <Security />
+  <Portfolio />
+  <SimVsReal />
+  <HowItWorks />
+  <Install />
+  <KISSetup />
+  <FAQ />
+  <Footer />
+</Layout>

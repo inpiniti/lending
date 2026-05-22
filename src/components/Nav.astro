@@ -1,0 +1,41 @@
+---
+interface Props {
+  appName?: string;
+  appNameKr?: string;
+}
+
+const { appName = 'AutoStock', appNameKr = '오토스톡' } = Astro.props;
+
+function BrandMark() {
+  return `<svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+    <rect width="28" height="28" rx="8" fill="currentColor"/>
+    <path d="M8 18.5L13 11L17 16L20 12.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="20" cy="12.5" r="1.6" fill="white"/>
+  </svg>`;
+}
+---
+
+<nav>
+  <div class="container nav-inner">
+    <div class="nav-brand">
+      <Fragment set:html={BrandMark()} />
+      <span>{appName}</span>
+      <span style="
+        font-size: 10px; font-weight: 700;
+        padding: 2px 6px; border-radius: 4px;
+        background: var(--warn-bg); color: var(--warn);
+        border: 1px solid var(--warn-border);
+        margin-left: 4px;
+      ">BETA</span>
+    </div>
+    <div class="nav-links">
+      <a href="#features">기능</a>
+      <a href="#screens">화면</a>
+      <a href="#security">보안</a>
+      <a href="#how">작동</a>
+      <a href="#install">설치</a>
+      <a href="#faq">FAQ</a>
+    </div>
+    <a href="#install" class="nav-cta">베타 체험</a>
+  </div>
+</nav>

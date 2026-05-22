@@ -1,0 +1,95 @@
+---
+---
+
+<section class="faq" id="faq" style="padding: 6rem 0; border-bottom: 1px solid var(--border);">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">FAQ</span>
+      <h2>자주 묻는 질문.</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q">
+          <span>왜 앱스토어에서 바로 받을 수 없나요?</span>
+          <span class="faq-toggle">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 2v8M2 6h8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          </span>
+        </button>
+        <div class="faq-a">아직 정식 출시 전 베타 단계라서, 앱스토어 심사를 받지 않은 상태입니다. 대신 Expo Go라는 공식 도구로 빌드를 미리 실행해볼 수 있어요. 정식 출시 후에는 일반 앱처럼 설치 가능합니다.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">
+          <span>Expo Go가 뭔가요? 안전한가요?</span>
+          <span class="faq-toggle">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 2v8M2 6h8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          </span>
+        </button>
+        <div class="faq-a">Expo는 React Native 앱을 만드는 회사이고, Expo Go는 그 회사가 만든 공식 미리보기 앱입니다. 전 세계 수많은 개발팀이 베타 배포에 사용하고 있고, 앱스토어/플레이스토어에서 정식으로 받을 수 있어요.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">
+          <span>실제 돈으로 매매하나요?</span>
+          <span class="faq-toggle">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 2v8M2 6h8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          </span>
+        </button>
+        <div class="faq-a">연결된 증권 계정으로 실거래가 가능하지만, 베타 단계에서는 테스트 계정 또는 소액 운용을 강력히 권장합니다. 모든 매매는 사용자가 직접 설정한 조건에 따라 실행됩니다.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">
+          <span>내 계정 정보는 안전한가요?</span>
+          <span class="faq-toggle">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 2v8M2 6h8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          </span>
+        </button>
+        <div class="faq-a">증권사 API 키는 사용자 기기와 서버 사이에서 암호화되어 저장됩니다. 베타 기간에는 가능하면 별도의 테스트 계정 사용을 권장합니다.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">
+          <span>자동 매매를 끄려면?</span>
+          <span class="faq-toggle">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 2v8M2 6h8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          </span>
+        </button>
+        <div class="faq-a">각 종목 카드의 ON/OFF 토글로 즉시 비활성화할 수 있습니다. 전체 일시정지 기능도 설정 화면에 있어요.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">
+          <span>버그를 발견했어요. 어디로 알려야 하나요?</span>
+          <span class="faq-toggle">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 2v8M2 6h8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          </span>
+        </button>
+        <div class="faq-a">랜딩 페이지 하단의 문의 채널로 연락 주세요. 베타 기간 동안의 모든 피드백은 출시 버전에 반영됩니다.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">
+          <span>다른 사용자의 설정이 내 거래에 영향을 주나요?</span>
+          <span class="faq-toggle">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 2v8M2 6h8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          </span>
+        </button>
+        <div class="faq-a">절대 그럴 리 없습니다. 모든 사용자의 설정과 거래는 완벽하게 격리됩니다. 당신의 자격증명은 오직 당신의 거래에만 사용되며, 다른 사용자의 설정 변화는 당신에게 영향을 주지 않습니다.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  document.querySelectorAll('.faq-q').forEach(button => {
+    button.addEventListener('click', () => {
+      const item = button.parentElement;
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(el => el.classList.remove('open'));
+      if (!isOpen) {
+        item.classList.add('open');
+      }
+    });
+  });
+</script>

@@ -1,0 +1,60 @@
+---
+---
+
+<section id="security" style="padding: 6rem 0; border-bottom: 1px solid var(--border);">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">SECURITY & ISOLATION</span>
+      <h2>완벽한 사용자 격리 & 데이터 보안</h2>
+      <p>여러 사용자가 하나의 서버를 공유하지만, 각자의 데이터와 거래는 완전히 격리됩니다. 당신의 자격증명은 오직 당신의 거래에만 사용됩니다.</p>
+    </div>
+    <div class="security-grid">
+      <div class="security-item">
+        <h4>
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" style="display: inline; margin-right: 0.5rem;"><path d="M3 9c0-2.5 2-4 7-4s7 1.5 7 4v7c0 2.5-2 4-7 4s-7-1.5-7-4v-7z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M10 12v3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          JWT 기반 사용자 식별
+        </h4>
+        <p>계좌번호를 기반으로 한 결정적 사용자 ID. 로그인 시 한국투자증권 API로 검증된 JWT 토큰을 발급받아 모든 요청에 사용됩니다.</p>
+      </div>
+
+      <div class="security-item">
+        <h4>
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" style="display: inline; margin-right: 0.5rem;"><circle cx="10" cy="10" r="7" stroke="currentColor" stroke-width="1.5"/><path d="M10 6v4l2.5 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          Row-Level Security (RLS)
+        </h4>
+        <p>Supabase 데이터베이스 수준에서 사용자별 접근 제어. 당신의 설정과 거래 기록은 당신의 JWT로만 조회/수정 가능합니다.</p>
+      </div>
+
+      <div class="security-item">
+        <h4>
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" style="display: inline; margin-right: 0.5rem;"><path d="M2 10c0-1 .5-2 1.5-2.5M17 10c0 1-.5 2-1.5 2.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="10" cy="10" r="5" stroke="currentColor" stroke-width="1.5"/><path d="M10 8v4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          KIS 자격증명 격리
+        </h4>
+        <p>당신의 appkey와 appsecret은 서버에 암호화되어 저장되며, 당신의 거래 주문에만 사용됩니다. 다른 사용자의 거래는 절대 당신의 계좌로 체결되지 않습니다.</p>
+      </div>
+
+      <div class="security-item">
+        <h4>
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" style="display: inline; margin-right: 0.5rem;"><rect x="4" y="6" width="12" height="10" rx="1" stroke="currentColor" stroke-width="1.5"/><path d="M10 10h0" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          멀티세션 웹소켓
+        </h4>
+        <p>실시간 가격 감시도 사용자별로 분리됩니다. 당신의 가격 업데이트는 당신의 세션으로만 전송되며, 다른 사용자의 가격 변동을 볼 수 없습니다.</p>
+      </div>
+
+      <div class="security-item">
+        <h4>
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" style="display: inline; margin-right: 0.5rem;"><path d="M14 6l-4.5 4.5L6 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M3 10c0-3.5 2.5-6 7-6s7 2.5 7 6-2.5 6-7 6-7-2.5-7-6z" stroke="currentColor" stroke-width="1.5"/></svg>
+          감시된 거래 격리
+        </h4>
+        <p>백엔드는 당신이 등록한 종목만 감시하고, 당신의 자격증명으로만 주문을 실행합니다. 다른 사용자의 설정에는 절대 접근하지 않습니다.</p>
+      </div>
+    </div>
+    <div style="margin-top: 3rem; padding: 2rem; background: var(--blue-light); border: 1px solid var(--blue); border-radius: 12px;">
+      <h4 style="color: var(--blue); margin-bottom: 0.75rem;">✓ 검증된 격리</h4>
+      <p style="margin: 0; color: var(--fg);">
+        모든 격리 메커니즘(JWT 서명, RLS 정책, 사용자별 세션, 거래 소유자 검증)은 단위 테스트를 통과했으며,
+        실제 배포 전 2명 이상의 사용자가 상호 간섭 없이 독립적으로 거래할 수 있음을 검증합니다.
+      </p>
+    </div>
+  </div>
+</section>
